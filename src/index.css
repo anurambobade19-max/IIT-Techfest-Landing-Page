@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0f0f17;
+    color: #e8e8ed;
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(139, 91, 247, 0.4);
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0f0f17;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #8b5bf7, #d49920);
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #edcb5d 0%, #e7b53a 40%, #faf2cc 60%, #d49920 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-aether {
+    background: linear-gradient(135deg, #a87fff 0%, #8b5bf7 40%, #c4abff 60%, #7738ec 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-aurora {
+    background: linear-gradient(135deg, #edcb5d 0%, #a87fff 50%, #8b5bf7 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glass {
+    background: rgba(26, 26, 36, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(139, 91, 247, 0.15);
+  }
+
+  .glass-gold {
+    background: rgba(26, 26, 36, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 153, 32, 0.2);
+  }
+
+  .border-gradient {
+    border-image: linear-gradient(135deg, #8b5bf7, #d49920) 1;
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(139, 91, 247, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(139, 91, 247, 0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .bg-dots {
+    background-image: radial-gradient(rgba(212, 153, 32, 0.12) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .shimmer-text {
+    background: linear-gradient(90deg, #8386a0 0%, #fff 50%, #8386a0 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+  }
+
+  .perspective {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply text-xs uppercase tracking-[0.3em] text-gold-400 font-medium;
+  }
+
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-aether-600 to-aether-500 text-white font-medium text-sm tracking-wide transition-all duration-300 hover:shadow-[0_0_30px_rgba(139,91,247,0.5)] hover:scale-[1.02];
+  }
+
+  .btn-gold {
+    @apply relative inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-gold-500 to-gold-400 text-ink-950 font-semibold text-sm tracking-wide transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,153,32,0.5)] hover:scale-[1.02];
+  }
+
+  .btn-ghost {
+    @apply relative inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border border-ink-700 text-ink-100 font-medium text-sm tracking-wide transition-all duration-300 hover:border-aether-500 hover:text-white hover:bg-aether-950/30;
+  }
+}
